@@ -27,7 +27,7 @@ if api_key:
             if texto_usuario:
                 with st.spinner("Revisando tu texto..."):
                     try:
-                        model = genai.GenerativeModel('gemini-1.5-pro')
+                        model = genai.GenerativeModel("gemini-2.5-flash-lite")
                         prompt = f"Corrige la ortografía y mejora la redacción y estilo del siguiente texto. Devuelve solo el texto corregido:\n\n{texto_usuario}"
                         response = model.generate_content(prompt)
                         st.subheader("Texto Mejorado:")
@@ -43,7 +43,7 @@ if api_key:
             if texto_usuario:
                 with st.spinner("Pensando en ideas..."):
                     try:
-                        model = genai.GenerativeModel('gemini-1.5-pro')
+                        model = genai.GenerativeModel("gemini-2.5-flash-lite")
                         prompt = f"Continúa escribiendo el siguiente texto de forma coherente y creativa (agrega un párrafo más):\n\n{texto_usuario}"
                         response = model.generate_content(prompt)
                         st.subheader("Sugerencia:")
@@ -61,7 +61,7 @@ if api_key:
             if tema:
                 with st.spinner("Escribiendo..."):
                     try:
-                        model = genai.GenerativeModel('gemini-1.5-pro')
+                        model = genai.GenerativeModel("gemini-2.5-flash-lite")
                         prompt = f"Escribe un texto sobre: '{tema}'. El tono del texto debe ser {tono.lower()}."
                         response = model.generate_content(prompt)
                         st.subheader("Texto Generado:")
